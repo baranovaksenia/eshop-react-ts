@@ -1,16 +1,19 @@
 import React from 'react';
-import { Outlet, Route, Routes } from 'react-router-dom';
-import Directory from './components/directory';
-import Header from './components/header/Header';
+import { Route, Routes } from 'react-router-dom';
 
-import data from './data.json';
+import Shop from './pages/Shop';
+import SignIn from './pages/SignIn';
+import Header from './components/header/Header';
+import Home from './pages/Home';
 
 const App = () => {
   return (
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Directory categories={data} />} />
+        <Route path="/" element={<Home />} />
+        <Route path="shop" element={<Shop />} />
+        <Route path="sign-in" element={<SignIn />} />
       </Routes>
     </>
   );
